@@ -1,7 +1,6 @@
-def encrypt(text,s): 
+def encrypt(text,k): 
     result = "" 
-  
-    # traverse text 
+
     for i in range(len(text)): 
         c = text[i] 
   
@@ -12,6 +11,8 @@ def encrypt(text,s):
             result += chr((ord(c) + k - 97) % 26 + 97) 
   
     return result 
+
+
   
 text = input("Enter message that you want to be encrypted: ")
 k = int(input("Enter the cypher shift (key): "))
@@ -24,4 +25,4 @@ text = encrypt(text,k)
 print ("Cipher: " + text)
 
 text = encrypt(text,-k)
-print ("De-excryption: " +text)
+print ("De-excryption: " + text)
